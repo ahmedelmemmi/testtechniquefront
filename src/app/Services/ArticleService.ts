@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ArticlesService {
 
-  API_URI = 'http://localhost:3000/posts';
+  API_URI = 'https://test-technique-memmi.herokuapp.com:3000/posts';
 
   constructor(private http: HttpClient) { }
 

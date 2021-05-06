@@ -8,7 +8,7 @@ import { User } from '../models/User';
   providedIn: 'root'
 }) 
 export class UserService {
-URL="http://localhost:3000/user" ; 
+URL="https://test-technique-memmi.herokuapp.com:3000/user" ; 
 connectedUser :BehaviorSubject<User>=new BehaviorSubject<User>(null) ;
 Email :BehaviorSubject<String>=new BehaviorSubject<String>(null) ;
 
