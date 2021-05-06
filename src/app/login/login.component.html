@@ -1,0 +1,137 @@
+<!--begin::Signin-->
+<div class="login-form login-signin" style="margin-top: 10%;">
+	<!--begin::Form-->
+	<form
+	  class="form"
+	  [formGroup]="loginForm"
+	  novalidate="novalidate"
+	  id="kt_login_signin_form"
+	  (ngSubmit)="submit()"
+	>
+	  <!--begin::Title-->
+	  <div class="pb-13 pt-lg-0 pt-5" >
+		<h3 class="font-weight-bolder font-size-h2 font-size-h1-lg" style="color: #f89D53">
+		  Bienvenue à Espace Adhérent
+		</h3>
+		<span class="text-muted font-weight-bold font-size-h4"  style="color: white"
+		  >Nouveau?
+		  <a
+			routerLink="/auth/registration"
+			id="kt_login_signup"
+			class=" font-weight-bolder"
+			style="color: white"
+			>Inscription</a
+		  >
+		</span>
+	  </div>
+	  <!--end::Title-->
+  
+  
+	  <!-- begin::Alert error-->
+	  <ng-container *ngIf="hasError">
+		<div
+		  class="mb-10 alert alert-custom alert-light-danger alert-dismissible"
+		>
+		  <div class="alert-text">Les informations de connexion sont incorrectes</div>
+		</div>
+	  </ng-container>
+	  <!-- end::Alert error-->
+  
+	  <!--begin::Form group-->
+	  <div class="form-group">
+		<h6 class="font-size-h6  " style="color: white;">Code d'adhésion</h6>
+		<input 
+		type="text" 
+		name="username"  
+		[(ngModel)]="username"
+		name="username"
+		formControlName="username" 
+		class="form-control" />
+		
+		
+	  </div>
+	  <!--end::Form group-->
+	  
+	  <!--begin::Form group-->
+	  <div class="form-group ">
+		<div class="d-flex justify-content-between mt-n5 ">
+		  <h6 class="font-size-h6 font-weight-bolder pt-5" style="color: white;"
+			>Mot de passe</h6
+		  >
+		  <a
+			routerLink="/auth/forgot-password"
+			class=" font-size-p font-weight-bolder  pt-5"
+			id="kt_login_forgot"
+			style="color: white;"
+		  >
+			Mot de passe oublié ?
+		  </a>
+		</div>
+		<div class="input-group"> 
+		  <input
+		  class="form-control form-control-solid h-auto py-7 px-6 rounded-lg"
+		  type="password"
+		  name="password"
+		  [(ngModel)]="password"
+		  [type]="fieldTextType ? 'text' : 'password'"
+		  autocomplete="on"
+		  formControlName="password"
+		  [ngClass]="{ 'is-invalid': loginForm.controls['password'].invalid }"
+		  
+		>
+		<div class="input-group-append">
+		  <span class="input-group-text" style="background-color: #F3F6F9;">
+			<i
+			  class="fa"
+			  [ngClass]="{
+				'fa-eye-slash': !fieldTextType,
+				'fa-eye': fieldTextType
+			  }"
+			  (click)="toggleFieldTextType()"
+			></i>
+		  </span>
+	   </div>
+		</div>
+		
+		
+	  </div>
+	  <!--end::Form group-->
+  
+	  <!--begin::Action-->
+	  <div class="pb-lg-0 pb-5" style="text-align: center;">
+		<button
+		  type="submit"
+		  id="kt_login_signin_submit"
+		  class="btn btn-primary font-weight-bolder font-size-h6 px-8 py-4 my-3 mr-3"
+		  [disabled]="loginForm.invalid"
+		>
+		  Connexion 
+		</button>
+  
+		<ng-container *ngIf="isLoading$ | async" >
+		  <span class="spinner  ml-5" style="color: #f89D53;"></span>
+		</ng-container>
+	  </div>
+	  <!--end::Action-->
+	</form>
+	<!--end::Form-->
+  </div>
+  <!--end::Signin-->
+  
+  <ng-template
+	#formError
+	let-control="control"
+	let-message="message"
+	let-validation="validation"
+  >
+	<ng-container
+	  *ngIf="control.hasError(validation)  "
+	>
+	  <div class="fv-plugins-message-container">
+		<div class="fv-help-block" style="color: #f89D53;">
+		  {{ message }}
+		</div>
+	  </div>
+	</ng-container>
+  </ng-template>
+  

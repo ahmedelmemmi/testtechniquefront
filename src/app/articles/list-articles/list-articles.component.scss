@@ -1,0 +1,42 @@
+.card{
+    position: relative;
+    background-color: white;
+    height: 200px;
+    width: 850px;
+    border: 1px solid #1E74FD;
+    border-radius: 38px;
+}
+#cardphoto{
+    z-index: 1;
+    // background-color: white;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 70px;
+    left: -35px;
+    border: 1px solid #1E74FD;
+    border-radius: 26px;
+    background: url('../../../assets/photo.png') ;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
+#articleTitre{
+    color: #1E74FD;
+    padding-left: 7%;
+}
+#description,#auteurTitre{
+    padding-left: 7%;
+}
+#description{
+    height: 100px;
+}
+.fa-heart{
+    color: red;
+}
+.fa-edit{
+    color: #1E74FD;
+}
+#editicon, #likeicon{
+    margin-left: 100px;
+}
