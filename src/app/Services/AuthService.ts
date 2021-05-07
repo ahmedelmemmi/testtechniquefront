@@ -34,19 +34,14 @@ return this.currentuserSubject.value;
 
  }​​​​​​​​
  
-/* public get currentprofilValue(): string {​​​​​​​​
- return this.profil.value ; 
- }​​​​​​​​
- */
+
 login(user){
   console.log(user)
   this.isLoadingSubject.next(true);
     return this.http.post<any>(this.URL+'/login', user).pipe(
-      map(User=> {​​​​​​​​
-    // login successful if there's a jwt token in the response
+      map(User=> {
         if (User && User.token) {
     ​​​​​​​​
-    // store Adherent details and jwt token in local storage to keep Adherent logged in between page refreshes
     localStorage.setItem('currentuser', JSON.stringify(User));
     this.currentuserSubject.next(User);
      }​​​​​​​​
