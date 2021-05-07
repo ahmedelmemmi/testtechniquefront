@@ -34,9 +34,13 @@
 .fa-heart{
     color: red;
 }
-.fa-edit{
-    color: #1E74FD;
+.fa-trash{
+    color: red;
 }
 #editicon, #likeicon{
     margin-left: 100px;
+    
+}
+#editicon:hover{
+    cursor: pointer;
 }

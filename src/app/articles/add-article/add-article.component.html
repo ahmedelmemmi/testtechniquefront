@@ -1,5 +1,6 @@
 <div class="card">
   <div class="card-body">
+    <h2>Ajouter un article</h2>
     <form action="">
       <div class="form-group">
         <input type="text" name="title" [(ngModel)]="article.title" placeholder="Title" class="form-control" autofocus>
@@ -10,7 +11,7 @@
       <!-- <div class="form-group">
         <input type="url" name="image URL" [(ngModel)]="article.image" placeholder="Image" class="form-control">
       </div> -->
-      <button class="btn btn-success btn-block" (click)="edit ? updateArticle() : saveNewArticle()">
+      <button class="btn btn-block" (click)="edit ? updateArticle() : saveNewArticle()">
         Ajouter
       </button>
     </form>

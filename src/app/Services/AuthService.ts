@@ -16,7 +16,7 @@ isLoading$: Observable<boolean>;
 profil: BehaviorSubject<string>;
 public currentuser: Observable<User>;
 public currentprofil:Observable<string> ; 
-URL = "https://test-technique-memmi.herokuapp.com:3000/user"
+URL = "https://test-technique-memmi.herokuapp.com/user"
 tokenSubscription = new Subscription()
 timeout;
 constructor(private http: HttpClient,private router: Router) {

@@ -12,12 +12,13 @@ import {AuthService} from '../Services/AuthService';
 })
 export class LoginComponent implements OnInit {
 
-  defaultAuth: any = {
-    username: 'VERG16-0946',
-    password: '123456',
-  };
+  // defaultAuth: any = {
+  //   username: 'ahmeddd',
+  //   password: '123456',
+  // };
   loginForm: FormGroup;
   hasError: boolean;
+  email:any;
   returnUrl: string;
   isLoading$: Observable<boolean>;
   username:any;
@@ -122,6 +123,8 @@ export class LoginComponent implements OnInit {
           
           this.userservice.connectedUser.next(res1) 
           localStorage.setItem("userConnected",this.username)
+          
+
           document.location.reload();
           this.router.navigateByUrl("/");
         })

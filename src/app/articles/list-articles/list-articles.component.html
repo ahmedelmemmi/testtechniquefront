@@ -1,31 +1,38 @@
-<div class="card" *ngFor="let article of articles.posts">
-    <div id="cardphoto">
-    </div>
-    <div class="container" >
-        <div class="row">
-            <div class="col-8 d-flex justify-content-start" >
-                <h2 id="articleTitre">{{article.title}}</h2>
+<div  
+class="search-results"
+infiniteScroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="50"
+(scrolled)="onScroll()"
+>
+    <div class="card" *ngFor="let article of articles.posts">
+        <div id="cardphoto">
+        </div>
+        <div class="container" >
+            <div class="row">
+                <div class="col-8 d-flex justify-content-start" >
+                    <h2 id="articleTitre">{{article.title}}</h2>
+                </div>
+                <div *ngIf="article.publiePar == user " class="col-2 d-flex justify-content-end" id="editicon" (click)="deleteArticle(article?._id)" >
+                        <i class="fas fa-trash fa-2x"></i>
+                </div>
+                
             </div>
-            <div *ngIf="article.publiePar == user " class="col-2 d-flex justify-content-end" id="editicon">
-                    <i class="fas fa-edit fa-2x"></i>
-            </div>
+            <div class="row">
+                <div class="col" id="description">
+                    <p>{{article.description}}  </p>
+                </div>
             
-        </div>
-        <div class="row">
-            <div class="col" id="description">
-                <p>{{article.description}}  </p>
             </div>
-           
-        </div>
-        <div class="row">
-            <div class="col-8 d-flex justify-content-start">
-                <p id="auteurTitre"> Publié par: <b>{{article.publiePar}}</b> </p>
+            <div class="row">
+                <div class="col-8 d-flex justify-content-start">
+                    <p id="auteurTitre"> Publié par: <b>{{article.publiePar}}</b> </p>
+                </div>
+                <div class="col-2 d-flex justify-content-end" id="likeicon" (click)="myFunction(this)">
+                    <i class="far fa-heart fa-2x"></i>
+                </div>
             </div>
-            <div class="col-2 d-flex justify-content-end" id="likeicon">
-                <i class="fas fa-plus-circle fa-2x" style="color: #1E74FD;"></i>
-                <i class="far fa-heart fa-2x"></i>
-            </div>
+    
         </div>
-  
     </div>
 </div>

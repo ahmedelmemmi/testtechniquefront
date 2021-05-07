@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
+<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light" *ngIf="isLoggedIn == true">
     <a class="navbar-brand" href="#">
       <img
         src="../../assets/logos/logo.png"
@@ -24,12 +24,12 @@
         <a class="nav-item nav-link active" href="#"
           >ACCUEIL <span class="sr-only">(current)</span></a
         >
-        <a class="nav-item nav-link" href="#ourSolutions">ARTICLES</a>
-        <a class="nav-item nav-link" href="#ourProcess">CONTACT</a>
-        <a class="nav-item nav-link" href="#Careers">A PROPOS</a>
+        <a class="nav-item nav-link" href="/">ARTICLES</a>
+        <a class="nav-item nav-link" href="/">CONTACT</a>
+        <a class="nav-item nav-link" href="/">A PROPOS</a>
       </div>
       <div class="languageBox">
-        <button>Déconnexion</button>
+        <button (click)="logOut()" class="btn btn-outline-danger">Déconnexion</button>
       </div>
     </div>
   </nav>

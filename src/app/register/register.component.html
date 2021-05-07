@@ -1,52 +1,105 @@
-<div class="content">
-    <div class="container-fluid">
-        
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                    
-                <!-- Register Content -->
-                <div class="account-content">
-                    <div class="row align-items-center justify-content-center">
-                        <div class="col-md-7 col-lg-6 login-left">
-                            <img src="assets/img/login-banner.png" class="img-fluid" >	
-                        </div>
-                        <div class="col-md-12 col-lg-6 login-right">
-                            <div class="login-header">
-                                <h3>Register</h3>
-                            </div>
-                            
-                            <!-- Register Form -->
-                            <form>
-                                <div class="form-group form-focus">
-                                    <input type="text" name="name"  class="form-control floating" >
-                                    <label class="focus-label">Name<span class="required">*</span></label>
-                                </div>
+<div class="limiter">
+	<div class="container-login100">
+		<div class="wrap-login100">
+			<div class="login100-pic js-tilt" data-tilt>
+				<img src="../../assets/img-01.png" alt="IMG">
+			</div>
 
-                                <div class="form-group form-focus">
-                                    <input type="text" name="mobile"  class="form-control floating" >
-                                    <label class="focus-label">Mobile Number<span class="required">*</span></label>
-                                </div>
+			<form 
+                class="login100-form validate-form"
+                [formGroup]="registerForm"
+                novalidate="novalidate"
+                (ngSubmit)="onSubmit()">
 
-                                <div class="form-group form-focus">
-                                    <input type="password" name="password" class="form-control floating" >
-                                    <label class="focus-label">Create Password<span class="required">*</span></label>
-                                </div>
-                                <div class="text-right">
-                                    <a class="forgot-link" [routerLink]="'/login'">Already have an account?</a>
-                                </div>
-                                <button class="btn btn-primary btn-block btn-lg login-btn" type="submit">Signup</button>
-                               
-                            </form>
-                            <!-- /Register Form -->
-                            
-                        </div>
-                    </div>
-                </div>
-                <!-- /Register Content -->
-                    
-            </div>
-        </div>
+				<span class="login100-form-title">
+					Membre Inscription
+				</span>
 
-    </div>
+				<div class="wrap-input100 validate-input" data-validate = "Valid username is required">
+					<input 
+					class="input100" 
+					type="text" 
+					name="username" 
+					[(ngModel)]="username"
+					name="username"
+					formControlName="username" 
+					placeholder="username">
+					<span class="focus-input100"></span>
+					<span class="symbol-input100">
+						<i class="fa fa-envelope" aria-hidden="true"></i>
+					</span>
+				</div>
 
-</div>		
+				<div class="wrap-input100 validate-input" data-validate = "Password is required">
+					<input 
+					class="input100" 
+					type="password" 
+					name="password"
+		  			[(ngModel)]="password"
+			  		formControlName="password" 
+
+					placeholder="Password">
+					<span class="focus-input100"></span>
+					<span class="symbol-input100">
+						<i class="fa fa-lock" aria-hidden="true"></i>
+					</span>
+				</div>
+                <div class="wrap-input100 validate-input" data-validate = "Valid email is required">
+					<input 
+					class="input100" 
+					type="text" 
+					name="email" 
+					[(ngModel)]="email"
+					name="email"
+					formControlName="email" 
+					placeholder="email">
+					<span class="focus-input100"></span>
+					<span class="symbol-input100">
+						<i class="fa fa-envelope" aria-hidden="true"></i>
+					</span>
+				</div>
+                <div class="wrap-input100 validate-input" data-validate = "Valid telephone is required">
+					<input 
+					class="input100" 
+					type="text" 
+					name="telephone" 
+					[(ngModel)]="telephone"
+					name="telephone"
+					formControlName="telephone" 
+					placeholder="telephone">
+					<span class="focus-input100"></span>
+					<span class="symbol-input100">
+						<i class="fa fa-envelope" aria-hidden="true"></i>
+					</span>
+				</div>
+                <div class="wrap-input100 validate-input" data-validate = "Valid DateNaissance is required">
+					<input 
+					class="input100" 
+					type="date" 
+					name="DateNaissance" 
+					[(ngModel)]="DateNaissance"
+					name="DateNaissance"
+					formControlName="DateNaissance" 
+					placeholder="DateNaissance">
+					<span class="focus-input100"></span>
+					<span class="symbol-input100">
+						<i class="fa fa-envelope" aria-hidden="true"></i>
+					</span>
+				</div>
+				
+				<div class="container-login100-form-btn">
+					<button class="login100-form-btn">
+						Inscription
+					</button>
+				</div>
+
+				<div class="text-center p-t-136">
+					<a class="txt2" routerLink="/login">
+						vous avez déja un compte ? 
+						<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+					</a>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

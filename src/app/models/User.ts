@@ -1,12 +1,10 @@
 export class User {
-    id?: number
-    name?: string
-    email?: string
-    username?: string
-    password?:string
-    image?: string
+    id?: string
     created_at?: Date
-    Datenaissance?: string
-    phone?:number
     token?: string;
+    username: string;
+    password: string;
+    email: string;
+    telephone: string;
+    DateNaissance: Date;
 };

@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ArticlesService {
 
-  API_URI = 'https://test-technique-memmi.herokuapp.com:3000/posts';
+  API_URI = 'https://test-technique-memmi.herokuapp.com/posts';
 
   constructor(private http: HttpClient) { }
 
@@ -21,7 +21,7 @@ export class ArticlesService {
   }
 
   deleteArticle(id: string) {
-    return this.http.delete(`${this.API_URI}/post/${id}`);
+    return this.http.delete(`${this.API_URI}/post/delete/${id}`);
   }
 
   saveArticle(article: Article) {

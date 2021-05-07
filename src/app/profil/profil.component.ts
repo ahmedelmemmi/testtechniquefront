@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from '../models/User';
+import { AuthService } from '../Services/AuthService';
+import { UserService } from '../Services/UserService';
 
 @Component({
   selector: 'app-profil',
@@ -7,9 +11,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+
+  ) { }
+username:any;
 
   ngOnInit(): void {
+    this.username=  localStorage.getItem("userConnected")
+ 
   }
+ 
 
 }

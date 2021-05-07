@@ -17,7 +17,9 @@ import { RegisterComponent } from './register/register.component';
 import { JwtHelperService, JwtModule } from '@auth0/angular-jwt';
 import { JwtInterceptor } from './jwt/jwt.interceptor';
 import { ErrorInterceptor } from './jwt/error.interceptor';
-import {NoCacheHeadersInterceptor} from './jwt/HttpInterceptor.interceptor'
+import {NoCacheHeadersInterceptor} from './jwt/HttpInterceptor.interceptor';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { NgxSpinnerModule } from 'ngx-spinner';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +38,8 @@ import {NoCacheHeadersInterceptor} from './jwt/HttpInterceptor.interceptor'
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    InfiniteScrollModule,
+    NgxSpinnerModule,
     JwtModule.forRoot({
       config: {
         tokenGetter: () => {
